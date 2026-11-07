@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f3e9">
+<meta name="description" content="Discover The Palas — printing, design, custom products and branding rooted in the creative spirit of Jharkhand.">
+<title>About The Palas | Print, Design, Custom &amp; Branding</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<style>
+/* 1. Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+/* 2. Colors and design settings */
+:root {
+  --ink:#24251f;
+  --muted:#66685d;
+  --paper:#f8f5ec;
+  --green:#354b36;
+  --rust:#a44f32;
+  --line:#ded9cb;
+}
+/* 3. Base page styles */
+* {
+  box-sizing:border-box;
+}
+html {
+  scroll-behavior:smooth;
+}
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'DM Sans',Arial,Helvetica,sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* 6. Story and meaning sections */
+.story {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:56px;
+  padding:45px 0 70px;
+  border-top:1px solid var(--line);
+}
+.story p {
+  margin:0 0 16px;
+  color:#55574e;
+}
+.meaning {
+  background:#eae5d7;
+  padding:30px;
+  border-left:4px solid var(--rust);
+  align-self:start;
+}
+.meaning strong {
+  display:block;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:29px;
+  line-height:1.25;
+  margin-bottom:10px;
+}
+/* 7. Values section */
+.values {
+  background:var(--green);
+  color:#fff;
+  padding:54px 6vw;
+  margin:0 calc(-6vw);
+}
+.values-inner {
+  max-width:1100px;
+  margin:auto;
+}
+.values p {
+  max-width:760px;
+  color:#e6e8df;
+}
+.tagline {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(28px,4vw,42px);
+  line-height:1.2;
+  letter-spacing:-.02em;
+  margin:22px 0 0;
+}
+/* 8. Social links and footer */
+.social {
+  padding:58px 0 66px;
+}
+.social p {
+  color:var(--muted);
+  max-width:650px;
+}
+.social-link {
+  display:inline-block;
+  margin-top:12px;
+  padding:12px 20px;
+  background:var(--rust);
+  color:white;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+.social-link:hover {
+  background:#843b26;
+}
+footer {
+  border-top:1px solid var(--line);
+  padding:22px 6vw;
+  color:var(--muted);
+  font-size:12px;
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+@media(max-width:700px) {
+  header {
+    padding:18px 5vw;
+  }
+  
+  .hero {
+    padding:52px 0 38px;
+  }
+  .story {
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:32px 0 48px;
+  }
+  .values {
+    padding:42px 5vw;
+    margin:0 -5vw;
+  }
+  main {
+    padding:0 5vw;
+  }
+  footer {
+    padding:20px 5vw;
+  }
+}
+/* Team section */
+/* 9. Team section */
+.team-section {
+  padding:64px 0 72px;
+  border-top:1px solid var(--line);
+}
+.team-heading {
+  text-align:center;
+  max-width:680px;
+  margin:0 auto 34px;
+}
+.team-heading h2 {
+  margin:12px 0;
+}
+.team-heading>p {
+  color:var(--muted);
+  margin:0;
+}
+.team-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+}
+.team-card {
+  overflow:hidden;
+  background:#fffdf7;
+  border:1px solid var(--line);
+  text-align:center;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.team-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px #24251f12;
+}
+.team-photo {
+  display:block;
+  width:100%;
+  height:450px;
+  object-fit: cover;
+  object-position:center 35%;
+  background:#eae5d7;
+}
+.team-info {
+  padding:24px 20px 28px;
+}
+.team-card h3 {
+  font:600 23px 'Playfair Display',Georgia,'Times New Roman',serif;
+  line-height:1.3;
+  margin:0 0 7px;
+  letter-spacing:-.015em;
+}
+.team-role {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+  letter-spacing:.02em;
+  margin:0 0 22px;
+}
+.know-more {
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  color:var(--rust);
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:1.5px;
+  font-weight:700;
+  line-height:1.5;
+  border-bottom:1px solid #d4a08e;
+  padding:0 0 5px;
+}
+.know-more:hover {
+  color:#74341f;
+  border-color:#74341f;
+}
+@media(max-width:700px) {
+  .team-section {
+    padding:46px 0 52px;
+  }
+  .team-grid {
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .team-card {
+    display:grid;
+    grid-template-columns:40% 60%;
+    align-items:stretch;
+  }
+  .team-photo {
+    height:100%;
+    min-height:210px;
+  }
+  .team-info {
+    padding:22px 14px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .team-card h3 {
+    font-size:20px;
+  }
+}
+@media(min-width:701px) and (max-width:900px) {
+  .team-photo {
+    height:220px;
+  }
+  .team-info {
+    padding:22px 14px;
+  }
+}
+/* 10. Responsive layout and typography */
+/* Refined typography system */
+body,p {
+  font-kerning:normal;
+}
+p {
+  margin-top:0;
+}
+.story p,.meaning p,.values p,.social p,.team-heading>p {
+  font-size:15px;
+  line-height:1.85;
+}
+.nav,.social-link,.know-more {
+  font-family:'DM Sans',Arial,sans-serif;
+}
+@media(max-width:700px) {
+  body {
+    font-size:15px;
+    line-height:1.75;
+  }
+  h1 {
+    font-size:clamp(39px,10vw,56px);
+    line-height:1.08;
+  }
+  h2 {
+    font-size:clamp(29px,7vw,36px);
+    line-height:1.18;
+  }
+  .eyebrow {
+    font-size:10px;
+    letter-spacing:2px;
+  }
+  .lead {
+    font-size:17px;
+    line-height:1.75;
+  }
+  .story p,.meaning p,.values p,.social p,.team-heading>p {
+    font-size:14px;
+    line-height:1.8;
+  }
+  .brand {
+    letter-spacing:2px;
+  }
+}
+/* 11. Hero background image */
+/* Hero image: save the image as images/about-hero.jpg */
+.hero {
+  position:relative;
+  isolation:isolate;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:390px;
+  max-width:none;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  padding:62px max(6vw,calc((100vw - 1100px)/2));
+  overflow:hidden;
+  color:#fff;
+  background-image:linear-gradient(90deg,rgba(20,31,23,.88) 0%,rgba(20,31,23,.68) 42%,rgba(20,31,23,.08) 100%),url("image/about-hero.png");
+  background-size:cover;
+  background-position:center 48%;
+}
+.hero .eyebrow {
+  color:#f2c2a7;
+  position:relative;
+  z-index:1;
+}
+.hero h1 {
+  color:#fff;
+  max-width:620px;
+  position:relative;
+  z-index:1;
+  text-shadow:0 2px 18px rgba(0,0,0,.18);
+}
+.hero .lead {
+  color:#f6f3eb;
+  max-width:600px;
+  position:relative;
+  z-index:1;
+}
+@media(max-width:700px) {
+  .hero {
+    min-height:410px;
+    padding:48px 5vw;
+    background-position:58% center;
+    background-image:linear-gradient(90deg,rgba(20,31,23,.86),rgba(20,31,23,.48)),url("images/about-hero.jpg");
+  }
+  .hero h1 {
+    font-size:clamp(38px,10vw,54px);
+    max-width:520px;
+  }
+  .hero .lead {
+    font-size:16px;
+    line-height:1.75;
+  }
+}
+
+/* Responsive Hero Image Fix */
+.hero {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 350px;
+}
+
+/* Mobile Screen */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 280px;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* Very Small Screen */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 240px;
+        background-position: center center;
+    }
+}
+
+.hero {
+    margin-top: 10px;
+}
+
+/* Hero image responsive fix */
+.hero {
+    background-image: url("image/about-hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 400px;
+}
+
+/* Mobile screen: 400px and below */
+@media screen and (max-width: 400px) {
+    .hero {
+        width: 100%;
+        min-height: 300px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+}
+
+/* =====================================
+   RESPONSIVE HERO TEXT FIX
+   All screen sizes
+===================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.hero {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.hero h1,
+.hero p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Hero heading: responsive font size */
+.hero h1 {
+    font-size: clamp(28px, 4vw, 56px);
+    line-height: 1.12;
+}
+
+/* Hero paragraph: responsive font size */
+.hero p {
+    font-size: clamp(14px, 1.5vw, 18px);
+    line-height: 1.6;
+}
+
+/* Prevent content from exceeding screen width */
+.hero-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: clamp(28px, 6vw, 42px);
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: clamp(26px, 8vw, 34px);
+        line-height: 1.15;
+    }
+
+    .hero p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .hero-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+/* Very small mobile screens */
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .hero-content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* Avoid unwanted horizontal page scrolling */
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<!-- HEADER START -->
+<header class="header" data-header>
+  <div class="container">
+
+    <!-- Search bar -->
+    <div class="input-wrapper">
+      <input
+        type="search"
+        name="search"
+        placeholder="Search Anything..."
+        class="input-field"
+      >
+      <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+    </div>
+
+    <!-- The Palash logo and brand name -->
+    <a href="#" class="logo brand-lockup" aria-label="Root of Jharkhand home">
+      <img src="./assets/images/palash-logo.png" alt="The Palash logo">
+      <span class="brand-copy">
+        <strong>Root of Jharkhand</strong>
+        <small>Print, Design, Custom, Branding</small>
+      </span>
+    </a>
+
+    <!-- Header action icons -->
+    <div class="header-action">
+
+      <button class="header-action-btn" aria-label="user">
+        <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <button class="header-action-btn" aria-label="favorite list">
+        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+        <span class="btn-badge">0</span>
+      </button>
+
+      <button class="header-action-btn" aria-label="cart">
+        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+        <span class="btn-badge">0</span>
+      </button>
+
+      <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+    </div>
+  </div>
+</header>
+<!-- HEADER END -->
+
+
+<!-- QUICK NAV START -->
+
+<nav class="quick-nav" aria-label="Main navigation">
+  <div class="quick-nav-inner">
+
+    <a href="index.html" class="nav-link">Home</a>
+
+    <a href="Product-catalogue.html" class="nav-link">Product</a>
+
+    <a href="#product" class="nav-link" aria-label="Try product customization">3D Try</a>
+
+    <a href="about.html" class="nav-link">About</a>
+
+  </div>
+</nav>
+
+<!-- QUICK NAV END -->
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Rooted in Jharkhand · Made for your ideas</div>
+    <h1>Ideas made real.<br>Rooted in Jharkhand.</h1>
+    <p class="lead">Welcome to The Palas — a creative brand for printing, design, custom products and branding. We bring ideas to life with thoughtful design and a strong connection to Jharkhand’s culture, creativity and identity.</p>
+  </section>
+  <section class="story">
+    <div>
+      <h2>Our story</h2>
+      <p>The Palas was created with a simple vision: to help people and businesses express their ideas through meaningful design and quality print solutions.</p>
+      <p>Inspired by the Palash flower and the roots of Jharkhand, our identity celebrates creativity, local culture and the power of a strong visual impression.</p>
+      <p>From custom gifts and personalised products to print design and business branding, we aim to make every project distinctive, useful and memorable.</p>
+    </div>
+    <aside class="meaning">
+      <strong>The Palas</strong>
+      <p>Local roots. Creative ideas. Distinctive design.</p>
+      <p>A brand inspired by Jharkhand, made to help your ideas stand out.</p>
+    </aside>
+  </section>
+  <section class="story" id="services">
+    <div>
+      <h2>More than printing</h2>
+      <p>We believe good design does more than look attractive. It communicates your story, builds recognition and turns everyday products into something personal.</p>
+    </div>
+    <div>
+      <h2>Our purpose</h2>
+      <p>The Palas brings print, design, customisation and branding together in one creative space — helping individuals, creators and businesses present themselves with confidence.</p>
+    </div>
+  </section>
+  <section class="values">
+    <div class="values-inner">
+      <div class="eyebrow" style="color:#e6b49e">The Palas spirit</div>
+      <p>We believe local roots and modern creativity belong together. Every design and custom product is an opportunity to share an idea with clarity, character and pride.</p>
+      <div class="tagline">Print your idea. Make it memorable.</div>
+    </div>
+  </section>
+
+  <section class="team-section" aria-labelledby="team-title">
+    <div class="team-heading">
+      <div class="eyebrow">The people behind The Palas</div>
+      <h2 id="team-title">Meet Our Team</h2>
+      <p>Three team members, one shared vision — bringing creative ideas to life through print, design and branding.</p>
+    </div>
+    <div class="team-grid">
+      <article class="team-card" id="team-member-1">
+        <img class="team-photo" src="image/team01.jpg" alt="Portrait of team member one" loading="lazy">
+        <div class="team-info">
+          <h3>Pralhad Kumar</h3>
+          <p class="team-role">Founder &amp; Visual Designer</p>
+          <a class="know-more" href="#team-member-1" aria-label="Know more about Team Member One">KNOW MORE <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+      <article class="team-card" id="team-member-2">
+        <img class="team-photo" src="image/team02.jpg" alt="Portrait of team member two" loading="lazy">
+        <div class="team-info">
+          <h3>B. K. Mahto</h3>
+          <p class="team-role">Client Relations &amp; Technical Support</p>
+          <a class="know-more" href="#team-member-2" aria-label="Know more about Team Member Two">KNOW MORE <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+      <article class="team-card" id="team-member-3">
+        <img class="team-photo" src="image/team03.jpg" alt="Portrait of team member three" loading="lazy">
+        <div class="team-info">
+          <h3>R. Bharti</h3>
+          <p class="team-role">Consultant &amp; Strategic Planner</p>
+          <a class="know-more" href="#team-member-3" aria-label="Know more about Team Member Three">KNOW MORE <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="social">
+    <h2>Connect with The Palas</h2>
+    <p>Explore our creative work, custom products and brand projects. Get in touch to discuss your next idea.</p>
+    <a class="social-link" href="mailto:hello@thepalash.in">Contact The Palas ↗</a>
+  </section>
+</main>
+<footer><span>© THE PALAS · Print · Design · Custom · Branding</span><a href="#top">Back to top ↑</a></footer>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flipkart.com</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
+body{font-family:Roboto,Arial,sans-serif;background:#f1f3f6;color:#212121}
+img{max-width:100%;height:auto}
+.navBar{min-height:56px;padding:8px 3%;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.logoSection{flex:0 0 auto}
+.flipkart-logo{max-width:110px}
+.searchBox{display:flex;flex:1 1 280px;min-width:180px;max-width:650px}
+.searchBox .input{width:100%;min-width:0;padding:12px;border:0;outline:0}
+.search-logo{padding:12px 15px;background:#fff}
+.loginBox,.becomeSellerBox,.moreBox,.cartBox{flex:0 0 auto}
+.belowNavBar{display:flex;gap:18px;align-items:center;justify-content:space-around;padding:12px 2%;overflow-x:auto;background:#fff}
+.smallCard{min-width:75px;text-align:center;flex:0 0 auto}
+.card{height:64px;width:64px;object-fit:contain}
+.heroSection{width:100%;min-height:220px;background-position:center;background-size:cover;background-repeat:no-repeat}
+.itemSection{display:grid;grid-template-columns:1.25fr repeat(4,1fr);gap:12px;padding:12px;background:#fff}
+.item{min-width:0;text-align:center;padding:10px;background:#fff}
+.itemHeadName{font-size:clamp(18px,2vw,26px);font-weight:600}
+.itemImg{width:100%;height:190px;object-fit:contain}
+.itemDescription{font-size:15px;white-space:normal;overflow-wrap:anywhere}
+.buyNowText{color:#2874f0;font-weight:600}
+.viewAllButton{cursor:pointer;border:0;font:inherit;display:inline-block;background:#2874f0;color:#fff;padding:10px 18px;border-radius:3px}
+footer{background:#172337;color:#fff}
+.footerSection{display:grid;grid-template-columns:2fr 1fr;gap:25px;padding:35px 5%}
+.footerLeft{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.footerRight{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.footerInfoHeading{color:#878787;font-size:13px}
+.footerContent p{margin:7px 0;font-size:12px}
+.footerExtras{display:flex;gap:20px;align-items:center;flex-wrap:wrap;padding:18px 5%;border-top:1px solid #454d5e;font-size:12px}
+.footerExtras img{max-width:180px}
+
+@media (max-width:900px){
+ .navBar{gap:10px}
+ .becomeSellerBox,.moreBox{display:none}
+ .itemSection{grid-template-columns:repeat(4,1fr)}
+ .itemSection .item:first-child{grid-column:1/-1}
+ .footerSection{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+ .navBar{padding:8px 12px}
+ .logoSection{width:auto}
+ .flipkart-logo{max-width:90px}
+ .searchBox{order:3;flex-basis:100%;max-width:none}
+ .loginBox .login{padding:7px 12px}
+ .cartBox{font-size:0}
+ .cartBox i{font-size:18px}
+ .belowNavBar{justify-content:flex-start;gap:12px}
+ .card{height:48px;width:48px}
+ .smallCard p{font-size:12px;margin:4px 0}
+ .heroSection{min-height:150px}
+ .itemSection{grid-template-columns:repeat(2,1fr);gap:8px;padding:8px}
+ .itemSection .item:first-child{grid-column:1/-1}
+ .itemImg{height:145px}
+ .item{padding:7px}
+ .itemDescription{font-size:13px}
+ .buyNowText{font-size:13px}
+ .footerSection{padding:25px 18px}
+ .footerLeft{grid-template-columns:repeat(2,1fr);gap:20px}
+ .footerRight{grid-template-columns:1fr}
+ .footerExtras{padding:15px 18px;gap:12px}
+}
+@media (max-width:380px){
+ .navBar{gap:7px}
+ .logoSection .logo-text{font-size:9px}
+ .flipkart-logo{max-width:78px}
+ .loginBox{font-size:13px}
+ .itemImg{height:125px}
+ .footerLeft{grid-template-columns:1fr 1fr}
+}
+
+/* PREMIUM VISUAL POLISH — styling only; original content and structure preserved */
+:root{--brand:#2874f0;--brand-dark:#1455c0;--ink:#172337;--muted:#687386;--surface:#fff;--page:#f4f6fb;--line:#e7ebf2;--shadow:0 8px 28px rgba(25,45,85,.08);--shadow-hover:0 16px 34px rgba(25,45,85,.15)}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:'Roboto','Poppins',Arial,sans-serif;background:var(--page);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);box-shadow:0 3px 18px rgba(18,38,75,.08);border-bottom:1px solid rgba(231,235,242,.9)}
+.navBar{min-height:76px;padding:12px clamp(16px,4vw,64px);gap:clamp(12px,2vw,28px);flex-wrap:nowrap}
+.logoSection{min-width:105px;line-height:1.1}
+.flipkart-logo{max-width:112px;max-height:34px;object-fit:contain}
+.logo-text{margin:5px 0 0;font-size:11px;color:#7b8494;font-style:italic}
+#plus{color:#f3b51b;font-weight:800}
+.searchBox{flex:1 1 340px;max-width:700px;min-width:120px;overflow:hidden;border:1px solid #e8edf5;border-radius:13px;background:#f5f7fb;transition:border-color .2s,box-shadow .2s,background .2s}
+.searchBox:focus-within{background:#fff;border-color:#9bbcff;box-shadow:0 0 0 4px rgba(40,116,240,.11)}
+.searchBox .input{background:transparent;padding:14px 16px;font-size:14px;color:var(--ink)}
+.searchBox .input::placeholder{color:#8b95a7}
+.search-logo{display:grid;place-items:center;padding:0 18px;background:transparent;color:var(--brand);font-size:17px}
+.loginBox .login{cursor:pointer;background:var(--brand);color:#fff;font-weight:700;padding:10px 24px;border-radius:10px;box-shadow:0 5px 12px rgba(40,116,240,.2);transition:transform .2s,background .2s,box-shadow .2s}
+.loginBox .login:hover{background:var(--brand-dark);transform:translateY(-1px);box-shadow:0 8px 18px rgba(40,116,240,.25)}
+.becomeSellerBox,.moreBox,.cartBox{font-size:14px;font-weight:600;color:#344055;white-space:nowrap;cursor:pointer;transition:color .2s}
+.becomeSellerBox p,.moreBox p{margin:0}
+.becomeSellerBox:hover,.moreBox:hover,.cartBox:hover{color:var(--brand)}
+.cartBox{display:flex;align-items:center;gap:8px}
+.cartBox i{font-size:18px}
+.belowNavBar{position:relative;justify-content:center;gap:clamp(16px,3vw,42px);padding:17px clamp(12px,3vw,44px);background:#fff;border-bottom:1px solid var(--line);box-shadow:0 4px 16px rgba(20,38,70,.035)}
+.smallCard{min-width:76px;padding:4px 8px;border-radius:12px;transition:transform .22s,background .22s}
+.smallCard:hover{transform:translateY(-3px);background:#f4f7ff}
+.card{height:58px;width:58px;transition:transform .22s;filter:saturate(.97)}
+.smallCard:hover .card{transform:scale(1.06)}
+/* belowNavBar category images: circular thumbnails */
+.belowNavBar .smallCard .card{border-radius:50%;object-fit:cover;aspect-ratio:1/1;overflow:hidden;}
+.belowNavBar .smallCard{border-radius:14px;}
+
+.smallCard p{margin:8px 0 0;font-size:13px;font-weight:600;color:#384358}
+.line{height:12px;background:transparent}
+.heroSection{min-height:clamp(190px,28vw,360px);background-color:#e8efff;border-radius:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);overflow:hidden}
+.itemSection{grid-template-columns:minmax(180px,1.1fr) repeat(4,minmax(0,1fr));gap:14px;margin:0 18px 18px;padding:22px;background:var(--surface);border:1px solid rgba(225,231,241,.85);border-radius:18px;box-shadow:var(--shadow)}
+.item{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:235px;padding:15px 12px;border:1px solid transparent;border-radius:14px;background:#fff;transition:transform .25s,border-color .25s,box-shadow .25s}
+.item:not(:first-child):hover{transform:translateY(-5px);border-color:#e5ecfb;box-shadow:var(--shadow-hover)}
+.itemHeadName{align-self:stretch;text-align:left;font-size:clamp(19px,2vw,26px);line-height:1.25;letter-spacing:-.45px;color:#1a2740;font-weight:800}
+.itemHeadName p{margin:0 0 18px}
+.viewAllSection{align-self:flex-start;margin-top:6px}
+.viewAllButton{cursor:pointer;border:0;font:inherit;background:linear-gradient(135deg,var(--brand),#4c91ff);padding:11px 19px;border-radius:10px;box-shadow:0 6px 14px rgba(40,116,240,.18);transition:transform .2s,box-shadow .2s}
+.viewAllButton:hover{transform:translateY(-2px);box-shadow:0 9px 18px rgba(40,116,240,.25)}
+.viewAllText{margin:0;font-size:11px;letter-spacing:1px;font-weight:800}
+.itemImg{height:clamp(135px,14vw,190px);padding:8px;object-fit:contain;transition:transform .28s;filter:saturate(1.02)}
+.item:hover .itemImg{transform:scale(1.045)}
+.itemDescription{width:100%;margin:12px 0 5px;font-size:14px;font-weight:600;color:#344055;line-height:1.45}
+.buyNowText{margin:4px 0 0;color:var(--brand);font-size:13px;font-weight:800;letter-spacing:.1px;cursor:pointer;transition:color .2s}
+.buyNowText:hover{color:#f07b25}
+footer{background:#111d31;color:#e9eef8;margin-top:28px}
+.footerSection{max-width:1500px;margin:0 auto;grid-template-columns:1.25fr 1fr;gap:48px;padding:48px clamp(22px,5vw,76px)}
+.footerLeft{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.footerRight{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;border-left:1px solid #354158;padding-left:34px}
+.footerInfoHeading{color:#98a8c2;font-size:11px;font-weight:800;letter-spacing:1.2px;margin:0 0 16px;text-transform:uppercase}
+.footerContent p{margin:9px 0;font-size:12px;line-height:1.55;color:#d1d9e7;transition:color .2s}
+.footerContent p:hover{color:#fff}
+.footerExtras{justify-content:space-between;gap:18px;padding:20px clamp(22px,5vw,76px);border-top:1px solid #354158;color:#e8edf6;font-size:12px}
+.footerExtras span{display:flex;align-items:center;gap:8px}
+.footerExtras img{max-width:170px;max-height:28px;object-fit:contain}
+::selection{background:rgba(40,116,240,.2);color:#15213a}
+:focus-visible{outline:3px solid rgba(40,116,240,.55);outline-offset:3px}
+@media(max-width:1100px){.navBar{gap:14px}.becomeSellerBox{display:none}.itemSection{grid-template-columns:repeat(4,minmax(0,1fr));margin-inline:12px;padding:16px}.itemSection .item:first-child{grid-column:1/-1;min-height:130px;flex-direction:row;justify-content:space-between;gap:18px}.itemHeadName{align-self:center}.itemHeadName p{margin:0}.viewAllSection{align-self:center;margin:0}.footerSection{grid-template-columns:1fr;gap:30px}.footerRight{border-left:0;border-top:1px solid #354158;padding:28px 0 0}}
+@media(max-width:700px){header{position:relative}.navBar{padding:12px 14px;gap:10px;flex-wrap:wrap;min-height:auto}.logoSection{min-width:80px}.flipkart-logo{max-width:88px}.searchBox{order:5;flex-basis:100%;max-width:none}.searchBox .input{padding:12px;font-size:13px}.search-logo{padding:0 14px}.loginBox .login{padding:8px 14px;font-size:13px}.moreBox{display:none}.cartBox{margin-left:auto;font-size:0}.cartBox i{font-size:19px}.belowNavBar{justify-content:flex-start;gap:8px;padding:12px 10px}.smallCard{min-width:68px;padding:4px}.card{height:45px;width:45px}.smallCard p{font-size:11px;margin-top:5px}.heroSection{min-height:155px}.line{height:8px}.itemSection{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 8px 12px;padding:10px;border-radius:14px}.itemSection .item:first-child{grid-column:1/-1;min-height:100px;padding:12px;flex-direction:row}.item{min-height:190px;padding:9px 6px;border-radius:10px}.itemHeadName{font-size:19px}.itemImg{height:clamp(110px,34vw,150px);padding:4px}.itemDescription{font-size:12px;margin:8px 0 3px}.buyNowText{font-size:12px}.viewAllButton{cursor:pointer;border:0;font:inherit;padding:9px 12px;border-radius:8px}.viewAllText{font-size:10px}.footerSection{padding:30px 18px}.footerLeft{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px}.footerRight{grid-template-columns:1fr;gap:18px;padding-top:22px}.footerExtras{justify-content:flex-start;padding:18px;gap:15px}.footerExtras img{max-width:145px}}
+@media(max-width:380px){.navBar{gap:8px}.logoSection .logo-text{font-size:9px}.flipkart-logo{max-width:76px}.loginBox .login{padding:7px 10px}.itemSection{gap:6px;padding:8px}.item{min-height:170px}.itemImg{height:112px}.itemHeadName{font-size:17px}.footerLeft{gap:20px 12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* MOBILE: keep VIEW ALL after all product cards, at the bottom-right */
+@media (max-width: 700px) {
+  .itemSection { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .itemSection .item:first-child { display: contents !important; }
+  .itemSection .item:first-child .itemHeadName {
+    order: 0; grid-column: 1 / -1; width: 100%; align-self: stretch;
+    text-align: left; margin: 0; padding: 8px 4px;
+  }
+  .itemSection .item:not(:first-child) { order: 1; }
+  .itemSection .item:first-child .viewAllSection {
+    order: 2; grid-column: 1 / -1; justify-self: end; align-self: auto;
+    position: static !important; margin: 8px 4px 4px; padding: 0;
+  }
+}
+
+
+/* DESKTOP/LAPTOP ONLY: evenly distribute all belowNavBar cards across full width.
+   Mobile rules (700px and below) remain unchanged. */
+@media (min-width: 701px) {
+  .belowNavBar {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    align-items: center;
+    justify-content: stretch;
+    gap: clamp(4px, 1vw, 16px);
+    padding-inline: clamp(8px, 1.5vw, 24px);
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .belowNavBar .smallCard {
+    min-width: 0;
+    width: 100%;
+    padding-inline: 2px;
+    box-sizing: border-box;
+  }
+  .belowNavBar .card {
+    display: block;
+    margin-inline: auto;
+    max-width: 100%;
+  }
+  .belowNavBar .smallCard p {
+    overflow-wrap: anywhere;
+  }
+}
+
+
+/* PRODUCT POPUP - Popup background */
+.productPopup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+/* Popup open hone par */
+.productPopup.open {
+  display: flex;
+}
+
+/* Main popup box */
+.popupBox {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+/* Close button */
+.popupClose {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  border: 0;
+  background: transparent;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Selected product */
+.popupMain {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-top: 15px;
+}
+
+#popupProductImage {
+  width: 45%;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+.popupInfo {
+  flex: 1;
+}
+
+.popupCategory {
+  color: #666;
+  font-size: 14px;
+}
+
+#popupProductName {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.popupPrice {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Recommended products */
+.recommendationTitle {
+  margin-top: 28px;
+  margin-bottom: 15px;
+}
+
+.popupRecommendations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.popupRecommendation {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  text-align: center;
+  min-width: 0;
+}
+
+.popupRecommendation img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+}
+
+.popupRecommendation p {
+  font-size: 13px;
+  margin: 8px 0 0;
+  overflow-wrap: anywhere;
+}
+
+/* Mobile responsive popup */
+@media (max-width: 600px) {
+  .productPopup {
+    padding: 10px;
+  }
+
+  .popupBox {
+    padding: 18px 12px;
+    max-height: 95vh;
+  }
+
+  .popupMain {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  #popupProductImage {
+    width: 100%;
+    height: 220px;
+  }
+
+  #popupProductName {
+    font-size: 20px;
+  }
+
+  .popupRecommendations {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .popupRecommendation {
+    padding: 6px;
+  }
+
+  .popupRecommendation img {
+    height: 85px;
+  }
+
+  .popupRecommendation p {
+    font-size: 11px;
+  }
+}
+
+
+.whatsappBuyButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding: 12px 18px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.whatsappBuyButton:hover {
+  background: #128C7E;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .whatsappBuyButton {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER START -->
+<header class="header" data-header>
+  <div class="container">
+
+    <!-- Search bar -->
+    <div class="input-wrapper">
+      <input
+        type="search"
+        name="search"
+        placeholder="Search Anything..."
+        class="input-field"
+      >
+      <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+    </div>
+
+    <!-- The Palash logo and brand name -->
+    <a href="#" class="logo brand-lockup" aria-label="Root of Jharkhand home">
+      <img src="./assets/images/palash-logo.png" alt="The Palash logo">
+      <span class="brand-copy">
+        <strong>Root of Jharkhand</strong>
+        <small>Print, Design, Custom, Branding</small>
+      </span>
+    </a>
+
+    <!-- Header action icons -->
+    <div class="header-action">
+
+      <button class="header-action-btn" aria-label="user">
+        <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <button class="header-action-btn" aria-label="favorite list">
+        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+        <span class="btn-badge">0</span>
+      </button>
+
+      <button class="header-action-btn" aria-label="cart">
+        <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+        <span class="btn-badge">0</span>
+      </button>
+
+      <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+    </div>
+  </div>
+</header>
+<!-- HEADER END -->
+
+
+<!-- QUICK NAV START -->
+<nav class="quick-nav" aria-label="Main navigation">
+  <div class="quick-nav-inner">
+
+    <a href="index.html" class="nav-link">Home</a>
+
+    <a href="Product-catalogue.html" class="nav-link">Product</a>
+
+    <a href="#product" class="nav-link" aria-label="Try product customization">3D Try</a>
+
+    <a href="about.html" class="nav-link">About</a>
+
+  </div>
+</nav>
+<!-- QUICK NAV END -->
+
+
+
+  <!-------------- MENU BAR -------------->
+
+
+  <div class="belowNavBar">
+
+    <div class="smallCard">
+      <img src="image/1.jpg" alt="Drinkware & Bottles" class="card">
+      <p>Grocery</p>
+
+    </div>
+
+    <div class="smallCard">
+      <img src="image/2.jpg" alt="Cushions & Home Decor" class="card">
+      <p>Mobiles</p>
+    </div>
+
+    <div class="smallCard">
+      <img src="image/3.jpg" alt="Fashion" class="card">
+      <p>Fashion</p>
+    </div>
+
+    <div class="smallCard">
+      <img src="image/4.jpg" alt="keychain & Small Gift" class="card">
+      <p>Laptops</p>
+    </div>
+
+    <div class="smallCard">
+      <img src="image/5.jpg" alt="Photo Faremes & Plaques" class="card">
+      <p>Home</p>
+    </div>
+
+    <div class="smallCard">
+      <img src="image/6.jpg" alt="Office & Desk Accessories" class="card">
+      <p>Electronic</p>
+    </div>
+
+    <div class="smallCard">
+      <img src="image/7.jpg" alt="Personalized Gifts" class="card">
+      <p>Travel</p>
+    </div>
+
+    <div class="smallCard">
+      <img src="image/8.jpg" alt="Corporate & Promotional Gifts" class="card">
+      <p>Toys</p>
+    </div>
+
+    <div class="smallCard">
+      <img src="image/9.jpg" alt="School, College & Events" class="card">
+      <p>Bikes</p>
+    </div>
+
+  </div>
+
+
+  <div class="line"></div>
+
+  <!-------------- MAIN IMG -------------->
+  <div class="heroSection">
+
+  </div>
+
+  <div class="line"></div>
+
+  <!-------------- ITEM SECTION -------------->
+  <div class="itemSection">
+
+    <div class="item">
+      <div class="itemHeadName">
+        <p>Get Set for Sports</p>
+      </div>
+
+      <div class="viewAllSection">
+        <button type="button" class="viewAllButton" data-category="Product01" aria-label="View all sports products"><p class="viewAllText">VIEW ALL</p></button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="image/1.jpg" alt="cloth1" class="itemImg">
+      <p class="itemDescription">Men's T-shirt</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/3.jpg" alt="cloth2" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/2.jpg" alt="cloth3" class="itemImg">
+      <p class="itemDescription">Men's Trackshut</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/4.jpg" alt="cloth4" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+  </div>
+
+  <div class="line"></div>
+
+
+  <div class="itemSection">
+
+    <div class="item">
+      <div class="itemHeadName">
+        <p>Best of Electronics</p>
+      </div>
+
+      <div class="viewAllSection">
+        <button type="button" class="viewAllButton" data-category="Product02" aria-label="View all electronics products"><p class="viewAllText">VIEW ALL</p></button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="image/2.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Men's T-shirt</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/5.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/6.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Men's Trackshut</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/7.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+  </div>
+
+  
+  <div class="line"></div>
+
+
+  <div class="itemSection">
+
+    <div class="item">
+      <div class="itemHeadName">
+        <p>Best of Electronics</p>
+      </div>
+
+      <div class="viewAllSection">
+        <button type="button" class="viewAllButton" data-category="Product03" aria-label="View all electronics products"><p class="viewAllText">VIEW ALL</p></button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="image/2.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Men's T-shirt</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/5.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/6.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Men's Trackshut</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/7.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+  </div>
+
+  <div class="line"></div>
+
+  <div class="itemSection">
+
+    <div class="item">
+      <div class="itemHeadName">
+        <p>Fashion Top Deals</p>
+      </div>
+
+      <div class="viewAllSection">
+        <button type="button" class="viewAllButton" data-category="Product04" aria-label="View all fashion products"><p class="viewAllText">VIEW ALL</p></button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="image/8.jpg" alt="cloth1" class="itemImg">
+      <p class="itemDescription">Lahenga Choli & Gown</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/9.jpg" alt="cloth10" class="itemImg">
+      <p class="itemDescription">Kurtas</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/11.jpg" alt="cloth3" class="itemImg">
+      <p class="itemDescription">Liwas</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/12.jpg" alt="cloth4" class="itemImg">
+      <p class="itemDescription">Kurta Set</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+  </div>
+
+  <div class="line"></div>
+
+  <div class="itemSection">
+
+    <div class="item">
+      <div class="itemHeadName">
+        <p>Top Deals for Today</p>
+      </div>
+
+      <div class="viewAllSection">
+        <button type="button" class="viewAllButton" data-category="Product05" aria-label="View all today products"><p class="viewAllText">VIEW ALL</p></button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="image/13.jpg" alt="topDeal" class="itemImg">
+      <p class="itemDescription">Musical Instrument</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/14.jpg" alt="topDeal" class="itemImg">
+      <p class="itemDescription">Smart Watches</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/15.jpg" alt="topDeal" class="itemImg">
+      <p class="itemDescription">Umbrella</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/16.jpg" alt="topDeal" class="itemImg">
+      <p class="itemDescription">Soft Toys</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+    
+  </div>
+
+  <div class="itemSection">
+
+    <div class="item">
+      <div class="itemHeadName">
+        <p>Get Set for Sports</p>
+      </div>
+
+      <div class="viewAllSection">
+        <button type="button" class="viewAllButton" data-category="Product06" aria-label="View all sports products"><p class="viewAllText">VIEW ALL</p></button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="image/1.jpg" alt="cloth1" class="itemImg">
+      <p class="itemDescription">Men's T-shirt</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/3.jpg" alt="cloth2" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/2.jpg" alt="cloth3" class="itemImg">
+      <p class="itemDescription">Men's Trackshut</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/4.jpg" alt="cloth4" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+  </div>
+
+  <div class="line"></div>
+
+
+  <div class="itemSection">
+
+    <div class="item">
+      <div class="itemHeadName">
+        <p>Best of Electronics</p>
+      </div>
+
+      <div class="viewAllSection">
+        <button type="button" class="viewAllButton" data-category="Product07" aria-label="View all electronics products"><p class="viewAllText">VIEW ALL</p></button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="image/2.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Men's T-shirt</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/5.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/6.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Men's Trackshut</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/7.jpg" alt="electronic img" class="itemImg">
+      <p class="itemDescription">Jackets</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+  </div>
+
+  <div class="line"></div>
+
+  <div class="itemSection">
+
+    <div class="item">
+      <div class="itemHeadName">
+        <p>Fashion Top Deals</p>
+      </div>
+
+      <div class="viewAllSection">
+        <button type="button" class="viewAllButton" data-category="Product08" aria-label="View all fashion products"><p class="viewAllText">VIEW ALL</p></button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="image/8.jpg" alt="cloth1" class="itemImg">
+      <p class="itemDescription">Lahenga Choli & Gown</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/9.jpg" alt="cloth10" class="itemImg">
+      <p class="itemDescription">Kurtas</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/11.jpg" alt="cloth3" class="itemImg">
+      <p class="itemDescription">Liwas</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/12.jpg" alt="cloth4" class="itemImg">
+      <p class="itemDescription">Kurta Set</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+  </div>
+
+  <div class="line"></div>
+
+  <div class="itemSection">
+
+    <div class="item">
+      <div class="itemHeadName">
+        <p>Top Deals for Today</p>
+      </div>
+
+      <div class="viewAllSection">
+        <button type="button" class="viewAllButton" data-category="Product09" aria-label="View all today products"><p class="viewAllText">VIEW ALL</p></button>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="image/13.jpg" alt="topDeal" class="itemImg">
+      <p class="itemDescription">Musical Instrument</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/14.jpg" alt="topDeal" class="itemImg">
+      <p class="itemDescription">Smart Watches</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/15.jpg" alt="topDeal" class="itemImg">
+      <p class="itemDescription">Umbrella</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+
+    <div class="item">
+      <img src="image/16.jpg" alt="topDeal" class="itemImg">
+      <p class="itemDescription">Soft Toys</p>
+      <p class="buyNowText">Buy Now</p>
+    </div>
+    
+    
+  </div>
+
+<!-- PRODUCT POPUP: is code ko </body> se just pehle paste karo -->
+<div id="productPopup" class="productPopup" aria-hidden="true">
+  <div class="popupBox" role="dialog" aria-modal="true"
+       aria-labelledby="popupProductName">
+
+    <button type="button" class="popupClose"
+            id="popupClose" aria-label="Close popup">×</button>
+
+    <div class="popupMain">
+      <img id="popupProductImage" src="" alt="Selected product">
+
+      <div class="popupInfo">
+  <p id="popupCategory" class="popupCategory"></p>
+  <h2 id="popupProductName">Product name</h2>
+  <p class="popupPrice">Price on enquiry</p>
+  <p>Personalized products by The Palash.</p>
+
+  <!-- WhatsApp button yahan add kiya hai -->
+  <a
+    id="popupWhatsAppButton"
+    class="whatsappBuyButton"
+    href="https://wa.me/919060028115"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    💬 Buy / Enquire on WhatsApp
+  </a>
+</div>
+    </div>
+
+    <h3 class="recommendationTitle">You may also like</h3>
+    <div id="popupRecommendations" class="popupRecommendations"></div>
+  </div>
+</div>
+
+
+  
+
+
+  <footer>
+
+    <div class="footerSection">
+
+      <div class="footerLeft">
+
+        <div class="footerInfo">
+          <p class="footerInfoHeading">ABOUT</p>
+          <div class="footerContent">
+            <p>Contact Us</p>
+            <p>About Us</p>
+            <p>Careers</p>
+            <p>Flipkart Stories</p>
+            <p>Press</p>
+            <p>Flipkart Wholesale</p>
+            <p>Corporate Information</p>
+          </div>
+        </div>
+
+        <div class="footerInfo">
+          <p class="footerInfoHeading">HELP</p>
+          <div class="footerContent">
+            <p>Payments</p>
+            <p>Shipping</p>
+            <p>Cancellation & Returns</p>
+            <p>FAQ</p>
+            <p>Report Infringement</p>
+          </div>
+        </div>
+
+        <div class="footerInfo">
+          <p class="footerInfoHeading">CONSUMER POLICY</p>
+          <div class="footerContent">
+            <p>Cancellation & Returns</p>
+            <p>Terms Of Use</p>
+            <p>Security</p>
+            <p>Privacy</p>
+            <p>Sitemap</p>
+            <p>Grievance Redressal</p>
+            <p>EPR Compliance</p>
+          </div>
+        </div>
+
+
+        <div class="footerInfo">
+          <p class="footerInfoHeading">SOCIAL</p>
+          <div class="footerContent">
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>YouTube</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="footerRight">
+
+        <div class="footerInfo">
+
+          <p class="footerInfoHeading">Mail Us:</p>
+          <div class="footerContent">
+            <p>Flipkart Internet Private Limited,</p>
+            <p>Buildings Alyssa, Begonia &</p>
+            <p>Clove Embassy Tech Village,</p>
+            <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+            <p>Bengaluru, 560103,</p>
+            <p>Karnataka, India</p>
+          </div>
+        </div>
+
+        <div class="footerInfo">
+          <p class="footerInfoHeading">Registered Office Address:</p>
+          <div class="footerContent">
+            <p>Flipkart Internet Private Limited,</p>
+            <p>Buildings Alyssa, Begonia &</p>
+            <p>Clove Embassy Tech Village,</p>
+            <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+            <p>Bengaluru, 560103,</p>
+            <p>Karnataka, India</p>
+            <p>CIN : U51109KA17012PTC066107</p>
+            <p>Telephone: 044-45614700</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footerExtras">
+      <span><i class="fa-solid fa-suitcase" style="color: #ffe500;"></i> Become a Seller</span>
+      <span><i class="fa-solid fa-star" style="color: #ffe500;"></i> Advertise</span>
+      <span><i class="fa-solid fa-gift" style="color: #ffe500;"></i> Gift Cards</span>
+      <span><i class="fa-solid fa-circle-question" style="color: #ffe500;"></i> Help Center</span>
+      <span>© 2007-2023 Flipkart.com</span>
+      <span><img src="images/payment-method.svg" alt="payment-method"></span>
+
+    </div>
+
+  </footer>
+
+
+
+
+<script>
+  // Har category ko uske HTML page se connect karo
+  const categoryPages = {
+    "Product01": "Product01.html",
+    "Product02": "Product02.html",
+    "Product03": "Product03.html",
+    "Product04": "Product04.html",
+    "Product05": "Product05.html",
+    "Product06": "Product06.html",
+    "Product07": "Product07.html",
+    "Product08": "Product08.html",
+    "Product09": "Product09.html"
+  };
+
+  // Sabhi VIEW ALL buttons par click event lagao
+  document.querySelectorAll(".viewAllButton[data-category]")
+    .forEach(function(button) {
+      button.addEventListener("click", function() {
+        const category = button.dataset.category;
+        const page = categoryPages[category];
+
+        if (page) {
+          window.location.href = page;
+        } else {
+          alert("Is category ka page abhi connect nahi hai!");
+        }
+      });
+    });
+</script>
+
+
+<script>
+/* =========================================
+   THE PALASH - PRODUCT POPUP
+   Existing VIEW ALL code ko change nahi karta
+========================================= */
+
+const productPopup = document.getElementById("productPopup");
+const popupClose = document.getElementById("popupClose");
+const popupImage = document.getElementById("popupProductImage");
+const popupName = document.getElementById("popupProductName");
+const popupCategory = document.getElementById("popupCategory");
+const popupRecommendations =
+  document.getElementById("popupRecommendations");
+
+// Har section ke 4 product cards ko collect karo
+const productGroups = [];
+
+document.querySelectorAll(".itemSection").forEach((section) => {
+  // Pehle item mein heading / VIEW ALL hota hai
+  const items = Array.from(
+    section.querySelectorAll(".item")
+  ).slice(1);
+
+  const heading =
+    section.querySelector(".itemHeadName") ||
+    section.querySelector("h2, h3");
+
+  const category = heading
+    ? heading.textContent.trim()
+    : "The Palash Products";
+
+  const products = items.filter((item) =>
+    item.querySelector(".itemImg") &&
+    item.querySelector(".itemDescription")
+  );
+
+  productGroups.push({ category, products });
+});
+
+// Product ka naam aur image existing HTML se lo
+function getProductInfo(card) {
+  const image = card.querySelector(".itemImg");
+  const name = card.querySelector(".itemDescription");
+
+  return {
+    name: name
+      ? name.textContent.trim()
+      : "The Palash Product",
+    image: image ? image.src : ""
+  };
+}
+
+// Selected product aur recommendations dikhao
+function openProductPopup(selectedCard, group) {
+  const selected = getProductInfo(selectedCard);
+
+  popupImage.src = selected.image;
+  popupImage.alt = selected.name;
+  popupName.textContent = selected.name;
+  popupCategory.textContent = group.category;
+
+  popupRecommendations.replaceChildren();
+
+  // Usi section ke baaki products
+  const recommendations = group.products.filter(
+    (card) => card !== selectedCard
+  );
+
+  recommendations.forEach((card) => {
+    const product = getProductInfo(card);
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "popupRecommendation";
+
+    const image = document.createElement("img");
+    image.src = product.image;
+    image.alt = product.name;
+    image.loading = "lazy";
+
+    const title = document.createElement("p");
+    title.textContent = product.name;
+
+    button.append(image, title);
+
+    button.addEventListener("click", () => {
+      openProductPopup(card, group);
+    });
+
+    popupRecommendations.appendChild(button);
+  });
+
+  productPopup.classList.add("open");
+  productPopup.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+// Har product card par click event
+productGroups.forEach((group) => {
+  group.products.forEach((card) => {
+    card.style.cursor = "pointer";
+
+    card.addEventListener("click", (event) => {
+      if (event.target.closest("a, button")) return;
+
+      openProductPopup(card, group);
+    });
+  });
+});
+
+// Popup close karna
+function closeProductPopup() {
+  productPopup.classList.remove("open");
+  productPopup.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+popupClose.addEventListener("click", closeProductPopup);
+
+// Popup ke bahar click karne par close
+productPopup.addEventListener("click", (event) => {
+  if (event.target === productPopup) {
+    closeProductPopup();
+  }
+});
+
+// Escape key se close
+document.addEventListener("keydown", (event) => {
+  if (
+    event.key === "Escape" &&
+    productPopup.classList.contains("open")
+  ) {
+    closeProductPopup();
+  }
+});
+</script>
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="navbar.js"></script>
+
+</body>
+
+</html>
